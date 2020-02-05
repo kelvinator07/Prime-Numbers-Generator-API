@@ -1,4 +1,4 @@
-# Prime Numbers Generator project using Spring API Assessment
+# Prime Numbers Generator project using Spring
 
 ## Setup Instructions
 
@@ -8,7 +8,6 @@ Use this login details if you get a prompt... User: `kelvin` Password: `password
 
 
 1. Clone this repository and open in your favourite IDE.
-
 
 2. Open the `application.properties` file under the resources directory to see configurations.
 
@@ -22,9 +21,9 @@ Use this login details if you get a prompt... User: `kelvin` Password: `password
     
     Use this login details if you get a prompt... User: `kelvin` Password: `password`.
     
-    For H2 (Default in memory Database for testing)
+6. For H2 (Default in memory Database for testing)
     
-    Now, once you get the Spring application running, you can navigate at the `http://localhost:8080/h2-console`.
+    Now, once you get the Spring application running, you can navigate to the H2 database using this url: `http://localhost:8080/h2-console`.
     
     Click on PRIME and Run Query to see database contents
 
@@ -33,5 +32,5 @@ Use this login details if you get a prompt... User: `kelvin` Password: `password
 <table>
 <tr><th>HTTP VERB</th><th>ENDPOINTS</th><th>DESCRIPTION</th></tr>
 <tr><td>Home Controller</td></tr>
-<tr><td>POST</td><td>/api/v1/prime</td><td>Creates user account</td></tr>
+<tr><td>POST</td><td>/api/v1/prime</td><td>Generates Prime Numbers</td></tr>
 </table>
