@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -39,7 +40,7 @@ public class PrimeServiceImpl implements PrimeService {
             algorithmSelected = "Naive/BruteForce Approach";
         } else {
             // Sieve Algorithm has a time complexity of O(n logn)
-            primeNumbers = seivePrime(primeDto.getStartValue(), primeDto.getStopValue());
+            primeNumbers = sievePrime(primeDto.getStartValue(), primeDto.getStopValue());
             algorithmSelected = "Sieve Approach";
         }
 
@@ -75,10 +76,25 @@ public class PrimeServiceImpl implements PrimeService {
         return validationMessage;
     }
 
-    private List<Integer> seivePrime(int startValue, int stopValue) {
+    private List<Integer> sievePrime(int startValue, int stopValue) {
         startTime = System.nanoTime();
 
+        boolean prime[] = new boolean[stopValue+1];
+        Arrays.fill(prime, true);
+        for (int i = startValue; i * i <= stopValue; i++) {
+            if (prime[i]) {
+                for (int j = i * 2; j <= stopValue; j += i) {
+                    prime[j] = false;
+                }
+            }
+        }
+
         List<Integer> primeNumbers = new ArrayList<>();
+        for (int i = startValue; i <= stopValue; i++) {
+            if (prime[i]) {
+                primeNumbers.add(i);
+            }
+        }
 
         stopTime = System.nanoTime();
         return primeNumbers;
