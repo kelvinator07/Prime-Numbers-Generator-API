@@ -27,11 +27,6 @@ public class HomeController {
     @ApiOperation(value = "Generate Prime Numbers", response = Boolean.class)
     @PostMapping("/prime")
     public ResponseEntity<?> primeGenerator(@RequestBody PrimeDto primeDto) {
-//    public ResponseEntity<?> primeGenerator(@RequestParam("username") String username,
-//                                  @RequestParam("selection") int selection,
-//                                  @RequestParam("startValue") int startValue,
-//                                  @RequestParam("stopValue") int stopValue ) {
-//			@RequestParam(value="search", required = false) String search,
 
         PrimeResponse primeResponse = new PrimeResponse();
 
